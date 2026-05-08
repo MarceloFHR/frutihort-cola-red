@@ -142,9 +142,9 @@ export default function ProductosPage() {
             </div>
             <Link
               href="/contacto"
-              className="flex-none px-8 py-4 bg-rojo text-white font-heading font-semibold text-sm uppercase tracking-wide hover:bg-rojo-dark transition-colors"
+              className="flex-none px-8 py-4 rounded-lg bg-rojo text-white font-heading font-semibold text-sm uppercase tracking-wide hover:bg-rojo-dark transition-colors"
             >
-              Consultar disponibilidad
+              Contactanos
             </Link>
           </div>
         </div>

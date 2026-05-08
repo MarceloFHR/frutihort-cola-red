@@ -183,9 +183,9 @@ export default function ContactoPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full sm:w-auto px-10 py-4 bg-rojo text-white font-heading font-semibold text-sm uppercase tracking-wide hover:bg-rojo-dark transition-colors disabled:opacity-60"
+                    className="w-full sm:w-auto px-10 py-4 rounded-lg bg-rojo text-white font-heading font-semibold text-sm uppercase tracking-wide hover:bg-rojo-dark transition-colors disabled:opacity-60"
                   >
-                    {loading ? "Enviando..." : "Solicitar cotización"}
+                    {loading ? "Enviando..." : "Contactanos"}
                   </button>
                 </form>
               )}

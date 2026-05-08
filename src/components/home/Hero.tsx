@@ -86,13 +86,13 @@ export default function Hero() {
             <motion.div variants={item} className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contacto"
-                className="inline-flex items-center justify-center px-8 py-4 bg-rojo text-white font-heading font-semibold text-sm uppercase tracking-[0.15em] hover:bg-rojo-dark transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-rojo text-white font-heading font-semibold text-sm uppercase tracking-[0.15em] hover:bg-rojo-dark transition-colors"
               >
-                Solicitar cotización
+                Contactanos
               </Link>
               <Link
                 href="/productos"
-                className="inline-flex items-center justify-center px-8 py-4 border border-white/25 text-white font-heading font-medium text-sm uppercase tracking-[0.15em] hover:border-white/60 hover:bg-white/8 transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-lg border border-white/25 text-white font-heading font-medium text-sm uppercase tracking-[0.15em] hover:border-white/60 hover:bg-white/8 transition-all"
               >
                 Ver catálogo
                 <span className="ml-3 text-rojo">→</span>

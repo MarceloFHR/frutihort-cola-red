@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -13,6 +14,8 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -20,10 +23,12 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const solid = scrolled || !isHome;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        solid
           ? "bg-white/97 backdrop-blur-sm shadow-sm"
           : "bg-transparent"
       }`}
@@ -37,7 +42,7 @@ export default function Header() {
             width={180}
             height={44}
             className={`h-9 w-auto object-contain transition-all duration-300 ${
-              scrolled ? "" : "brightness-0 invert"
+              solid ? "" : "brightness-0 invert"
             }`}
             priority
           />
@@ -50,7 +55,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={`nav-link font-heading text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
-                scrolled ? "text-negro hover:text-verde" : "text-white/80 hover:text-white"
+                solid ? "text-negro hover:text-verde" : "text-white/80 hover:text-white"
               }`}
             >
               {link.label}
@@ -62,13 +67,13 @@ export default function Header() {
         <div className="hidden md:flex items-center">
           <Link
             href="/contacto"
-            className={`px-6 py-2.5 font-heading font-semibold text-xs uppercase tracking-[0.18em] transition-all duration-300 ${
-              scrolled
+            className={`px-6 py-2.5 rounded-lg font-heading font-semibold text-xs uppercase tracking-[0.18em] transition-all duration-300 ${
+              solid
                 ? "bg-rojo text-white hover:bg-rojo-dark"
                 : "bg-white/10 border border-white/30 text-white hover:bg-white hover:text-negro"
             }`}
           >
-            Solicitar Cotización
+            Contactanos
           </Link>
         </div>
 
@@ -78,9 +83,9 @@ export default function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menú"
         >
-          <span className={`block w-6 h-px transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""} ${scrolled && !menuOpen ? "bg-negro" : "bg-white"}`} />
-          <span className={`block w-6 h-px transition-all duration-300 ${menuOpen ? "opacity-0" : ""} ${scrolled && !menuOpen ? "bg-negro" : "bg-white"}`} />
-          <span className={`block w-6 h-px transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""} ${scrolled && !menuOpen ? "bg-negro" : "bg-white"}`} />
+          <span className={`block w-6 h-px transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""} ${solid && !menuOpen ? "bg-negro" : "bg-white"}`} />
+          <span className={`block w-6 h-px transition-all duration-300 ${menuOpen ? "opacity-0" : ""} ${solid && !menuOpen ? "bg-negro" : "bg-white"}`} />
+          <span className={`block w-6 h-px transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""} ${solid && !menuOpen ? "bg-negro" : "bg-white"}`} />
         </button>
       </div>
 
@@ -110,9 +115,9 @@ export default function Header() {
         <Link
           href="/contacto"
           onClick={() => setMenuOpen(false)}
-          className="mt-4 px-8 py-4 bg-rojo text-white font-heading font-bold text-sm uppercase tracking-[0.2em]"
+          className="mt-4 px-8 py-4 rounded-xl bg-rojo text-white font-heading font-bold text-sm uppercase tracking-[0.2em]"
         >
-          Solicitar Cotización
+          Contactanos
         </Link>
       </div>
     </header>

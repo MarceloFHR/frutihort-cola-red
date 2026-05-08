@@ -50,7 +50,7 @@ export default function ContactCTA() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between px-8 py-6 bg-[#25D366] hover:bg-[#20b558] transition-colors group"
+              className="flex items-center justify-between px-8 py-6 rounded-xl bg-[#25D366] hover:bg-[#20b558] transition-colors group"
             >
               <div>
                 <p className="font-heading font-bold text-white text-lg">
@@ -68,7 +68,7 @@ export default function ContactCTA() {
             {/* Form — secondary */}
             <Link
               href="/contacto"
-              className="flex items-center justify-between px-8 py-6 border border-white/20 hover:border-white hover:bg-white/5 transition-all group"
+              className="flex items-center justify-between px-8 py-6 rounded-xl border border-white/20 hover:border-white hover:bg-white/5 transition-all group"
             >
               <div>
                 <p className="font-heading font-semibold text-white text-lg">

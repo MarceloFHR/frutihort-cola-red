@@ -46,7 +46,6 @@ export default function ProductStrip() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
           {products.map((product, i) => {
             const isWide = i === 0 || i === 6 || i === 9;
-            const isTall = i === 2 || i === 8;
 
             return (
               <motion.div
@@ -56,10 +55,8 @@ export default function ProductStrip() {
                 transition={{ duration: 0.45, delay: i * 0.05, ease: "easeOut" }}
                 onMouseEnter={() => setHovered(product.id)}
                 onMouseLeave={() => setHovered(null)}
-                className={`relative overflow-hidden cursor-pointer group ${
-                  isWide ? "col-span-2" : "col-span-1"
-                } ${isTall ? "row-span-2" : "row-span-1"} ${
-                  isTall ? "aspect-[3/5]" : isWide ? "aspect-[2/1]" : "aspect-square"
+                className={`relative overflow-hidden cursor-pointer group rounded-xl ${
+                  isWide ? "col-span-2 aspect-[2/1]" : "col-span-1 aspect-square"
                 }`}
               >
                 {/* Product image */}

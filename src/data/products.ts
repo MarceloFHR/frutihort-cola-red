@@ -45,7 +45,7 @@ export const products: Product[] = [
   {
     id: "melon", name: "Melón", category: "fruta", season: "Nov — Feb", seasonShort: "Nov — Feb",
     color: "#B8C97A", accent: "#1B4332", emoji: "🍈", origin: "San Juan",
-    image: "https://images.unsplash.com/photo-1638865553538-2434be4c62bd?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1646992121887-b86f863dfb5e?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "palta", name: "Palta", category: "fruta", season: "Abr — Sep", seasonShort: "Abr — Sep",

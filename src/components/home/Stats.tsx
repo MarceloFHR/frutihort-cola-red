@@ -4,10 +4,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { value: "15+", label: "Años en el Mercado Central", suffix: "" },
+  { value: "40+", label: "Años en el Mercado Central", suffix: "" },
   { value: "200", label: "Toneladas distribuidas por mes", suffix: "T" },
-  { value: "23", label: "Provincias con cobertura activa", suffix: "" },
-  { value: "800+", label: "Clientes activos en todo el país", suffix: "" },
+  { value: "80+", label: "Variedades disponibles", suffix: "" },
+  { value: "800+", label: "Clientes activos", suffix: "" },
 ];
 
 export default function Stats() {

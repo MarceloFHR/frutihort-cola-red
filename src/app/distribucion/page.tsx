@@ -4,46 +4,36 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Distribución Nacional | FRUTIHORTÍCOLA RED",
+  title: "Distribución | FRUTIHORTÍCOLA RED",
   description:
-    "Distribución mayorista de frutas y verduras a todo el país desde el Mercado Central de Buenos Aires. Cadena de frío completa.",
+    "Distribución mayorista de frutas y verduras en Buenos Aires y el Gran Buenos Aires desde el Mercado Central.",
 };
 
-const regions = [
+const zones = [
   {
-    name: "Buenos Aires y GBA",
+    name: "Capital Federal",
     detail: "Entrega en 24hs. Flota propia con cadena de frío.",
     time: "24 hs",
   },
   {
-    name: "Córdoba y Santa Fe",
-    detail: "Rutas frecuentes. Salidas martes y viernes.",
-    time: "48 hs",
+    name: "GBA Norte",
+    detail: "San Isidro, Vicente López, Tigre, San Fernando y zonas aledañas.",
+    time: "24 hs",
   },
   {
-    name: "Entre Ríos y Corrientes",
-    detail: "Coordinación directa con transportista regional.",
-    time: "48-72 hs",
+    name: "GBA Sur",
+    detail: "Lanús, Lomas de Zamora, Quilmes, Berazategui y alrededores.",
+    time: "24 hs",
   },
   {
-    name: "Cuyo (Mendoza, San Juan, San Luis)",
-    detail: "Salidas semanales. Temperatura controlada.",
-    time: "72 hs",
+    name: "GBA Oeste",
+    detail: "Morón, Merlo, Moreno, La Matanza y zonas lindantes.",
+    time: "24 hs",
   },
   {
-    name: "NOA (Salta, Tucumán, Jujuy, Catamarca, La Rioja)",
-    detail: "Salidas regulares. Coordinación con depósito local.",
-    time: "72-96 hs",
-  },
-  {
-    name: "NEA (Misiones, Formosa, Chaco)",
-    detail: "Servicio disponible. Consultar frecuencia.",
-    time: "72-96 hs",
-  },
-  {
-    name: "Patagonia (Neuquén, Río Negro, Chubut, Santa Cruz, TdF)",
-    detail: "Servicio quincenal. Para grandes volúmenes.",
-    time: "5-7 días",
+    name: "Provincia de Buenos Aires",
+    detail: "La Plata, Mar del Plata, Bahía Blanca y principales ciudades del interior bonaerense.",
+    time: "24–48 hs",
   },
 ];
 
@@ -60,13 +50,13 @@ export default function DistribucionPage() {
               Logística
             </span>
             <h1 className="font-display text-5xl lg:text-7xl text-white italic leading-tight">
-              Llegamos
+              Buenos Aires,
               <br />
-              a todo el país.
+              cubierto.
             </h1>
             <p className="font-body text-base text-crema/60 mt-6 max-w-lg leading-relaxed">
-              Cadena de frío completa. Transportistas verificados. Seguimiento
-              de tu pedido en tiempo real.
+              Operamos desde el Mercado Central con flota propia y cadena de frío
+              para todo el Gran Buenos Aires y la Provincia.
             </p>
           </div>
         </div>
@@ -84,27 +74,46 @@ export default function DistribucionPage() {
 
               <div>
                 <p className="font-display text-3xl lg:text-4xl text-negro italic leading-[1.3] mb-12">
-                  23 provincias. Una sola llamada.
+                  Capital y provincia de Buenos Aires. Una sola llamada.
                 </p>
                 <div className="divide-y divide-negro/10">
-                  {regions.map((r) => (
+                  {zones.map((z) => (
                     <div
-                      key={r.name}
+                      key={z.name}
                       className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-2 sm:gap-8 py-6 group"
                     >
                       <div>
                         <h3 className="font-heading font-semibold text-base text-negro mb-1 group-hover:text-verde transition-colors">
-                          {r.name}
+                          {z.name}
                         </h3>
                         <p className="font-body text-sm text-gris leading-relaxed">
-                          {r.detail}
+                          {z.detail}
                         </p>
                       </div>
                       <div className="flex items-center sm:justify-end">
-                        <span className="inline-block px-3 py-1 bg-verde/10 font-heading text-xs font-medium text-verde-mid uppercase tracking-wide">
-                          {r.time}
+                        <span className="inline-block px-3 py-1 rounded-full bg-verde/10 font-heading text-xs font-medium text-verde-mid uppercase tracking-wide">
+                          {z.time}
                         </span>
                       </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Features */}
+                <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 border-t border-negro/10">
+                  {[
+                    { title: "Flota propia", body: "Vehículos refrigerados con temperatura controlada de punta a punta." },
+                    { title: "Entrega programada", body: "Coordinamos el día y horario que mejor se adapta a tu operación." },
+                    { title: "Stock real", body: "Confirmamos disponibilidad antes de cada pedido. Sin sorpresas." },
+                  ].map((f) => (
+                    <div key={f.title}>
+                      <span className="inline-block w-6 h-px bg-rojo mb-4" />
+                      <h3 className="font-heading font-semibold text-sm text-negro uppercase tracking-wide mb-2">
+                        {f.title}
+                      </h3>
+                      <p className="font-body text-sm text-gris leading-relaxed">
+                        {f.body}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -117,13 +126,13 @@ export default function DistribucionPage() {
         <div className="bg-negro py-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <p className="font-display text-3xl italic text-white">
-              ¿Tu zona no aparece? Consultanos.
+              ¿Querés recibir en tu negocio?
             </p>
             <Link
               href="/contacto"
-              className="flex-none px-8 py-4 bg-rojo text-white font-heading font-semibold text-sm uppercase tracking-wide hover:bg-rojo-dark transition-colors"
+              className="flex-none px-8 py-4 rounded-lg bg-rojo text-white font-heading font-semibold text-sm uppercase tracking-wide hover:bg-rojo-dark transition-colors"
             >
-              Contactar ahora
+              Contactanos
             </Link>
           </div>
         </div>

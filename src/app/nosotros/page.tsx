@@ -21,7 +21,7 @@ export default function NosotrosPage() {
               Nuestra historia
             </span>
             <h1 className="font-display text-5xl lg:text-7xl text-white italic leading-tight">
-              Más de 15 años
+              Más de 40 años
               <br />
               en el corazón
               <br />
@@ -50,14 +50,14 @@ export default function NosotrosPage() {
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-crema-dark pt-8">
                     <p className="font-body text-base text-gris leading-relaxed">
-                      Fundada en 2009 por la familia Rodríguez, Frutihortícola RED
+                      Con más de 40 años en el Mercado Central de Buenos Aires, Frutihortícola RED
                       nació de la vocación de llevar producto fresco directamente
                       desde el productor hasta el negocio, sin intermediarios innecesarios.
                     </p>
                     <p className="font-body text-base text-gris leading-relaxed">
-                      Con el tiempo, construimos relaciones sólidas con más de 200
-                      productores en todo el país y desarrollamos una red logística
-                      que cubre las 23 provincias argentinas.
+                      Con el tiempo, construimos relaciones sólidas con productores de todo el país
+                      y desarrollamos una operación mayorista de escala real en
+                      el Gran Buenos Aires y la Provincia de Buenos Aires.
                     </p>
                   </div>
                 </div>
